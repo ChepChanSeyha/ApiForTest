@@ -158,7 +158,7 @@ open class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     for (i in response.body()?.route!!.indices) {
                         val distance = response.body()!!.route?.get(0)
                         showDistanceDuration.text = "Distance:$distance"
-                        val encodedString = response.body()!!.route.toString()
+                        val encodedString = response.body()!!.route?.get(0).toString()
                         val list = decodePoly(encodedString)
                         line = mMap!!.addPolyline(
                             PolylineOptions()
